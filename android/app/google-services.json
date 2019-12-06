@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "304199347148",
+    "firebase_url": "https://on-schedule-55696.firebaseio.com",
+    "project_id": "on-schedule-55696",
+    "storage_bucket": "on-schedule-55696.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304199347148:android:e2099378372c1d58428b69",
+        "android_client_info": {
+          "package_name": "com.example.medical_reminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304199347148-eq3eqa9on7p28mv7b49l9odoh4lvm8r0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc_31_jB4-gGbF05m19wxxxstfQInftGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304199347148-eq3eqa9on7p28mv7b49l9odoh4lvm8r0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
