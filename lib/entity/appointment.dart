@@ -4,7 +4,7 @@ import 'package:floor/floor.dart';
 class Appointment {
 // يحتوي على
 
-// رقم الكشف وهو رقم مميز غسر متكرر
+// رقم الكشف وهو رقم مميز غير متكرر
   @PrimaryKey(autoGenerate: true)
   final int id;
 
