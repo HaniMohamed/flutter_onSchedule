@@ -2,6 +2,7 @@ import 'package:floor/floor.dart';
 import 'package:medical_reminder/entity/missed.dart';
 import 'package:medical_reminder/entity/notification.dart';
 
+// جدول خاص بالمواعيد الفائتة
 @dao
 abstract class MissedDao {
 // سحب جميع بيانات حدول الادوية الفائتة
