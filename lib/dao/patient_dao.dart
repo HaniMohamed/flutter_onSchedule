@@ -1,6 +1,7 @@
 import 'package:floor/floor.dart';
 import 'package:medical_reminder/entity/patient.dart';
 
+// جدول خاص بالاشخاص المرضى
 @dao
 abstract class PatientDao {
 // سحب بيانات المرضى
