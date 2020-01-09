@@ -13,10 +13,16 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 final BehaviorSubject<ReceivedNotification> didReceiveLocalNotificationSubject =
     BehaviorSubject<ReceivedNotification>();
 
+// ملف ارسال الإشعارات
+// تعريف الاشعار
 class ReceivedNotification {
+// رقم الاشعارد
   final int id;
+// عنوان الاشعار
   final String title;
+// نص رسالة الاشعار
   final String body;
+// معلومات اضافية
   final String payload;
 
   ReceivedNotification(
@@ -35,6 +41,7 @@ class ScheduleNotification {
     this.context = context;
   }
 
+// إرسال إشعار مرة واحدة
   Future<void> showNotification(i, targetID, title, body) async {
     var androidPlatformChannelSpecifics = AndroidNotificationDetails(
         'test', 'testingNotification', ' ',
@@ -46,6 +53,7 @@ class ScheduleNotification {
         .show(i, title, body, platformChannelSpecifics, payload: targetID);
   }
 
+// إرسال إشعار مرة واحده مع تخصيص ايقونة وصوت مخصصين
   /// Schedules a notification that specifies a different icon, sound and vibration pattern
   Future<void> scheduleNotification(
       id, title, body, time, sound, Patient patient, targetID) async {
@@ -66,6 +74,7 @@ class ScheduleNotification {
         payload: targetID.toString() + "-doctor");
   }
 
+// إظهار إشعار يوميا في موعد معين
   Future<void> showDailyAtTime(
       id, title, body, DateTime time, sound, Patient patient, targetID) async {
     var scheduledNotificationDateTime =
@@ -83,6 +92,7 @@ class ScheduleNotification {
         payload: targetID.toString() + "-medicine");
   }
 
+// الكشف عن الإشعارات المنتظرة
   Future<void> checkPendingNotificationRequests() async {
     var pendingNotificationRequests =
         await flutterLocalNotificationsPlugin.pendingNotificationRequests();
@@ -109,10 +119,12 @@ class ScheduleNotification {
     );
   }
 
+// الغاء جميع الاشعارات
   Future<void> cancelAllNotifications() async {
     await flutterLocalNotificationsPlugin.cancelAll();
   }
 
+// إلغاء اشعار معين عن طريق رقمه
   Future<void> cancelNotification(id) async {
     await flutterLocalNotificationsPlugin.cancel(id);
   }
