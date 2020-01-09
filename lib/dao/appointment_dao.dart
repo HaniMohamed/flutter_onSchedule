@@ -1,6 +1,7 @@
 import 'package:floor/floor.dart';
 import 'package:medical_reminder/entity/appointment.dart';
 
+// جدول هاص بمواعيد الكشوفات
 @dao
 abstract class AppointmentDao {
 //  سحب جميع البيانات من جدول مواعيد الكشوفات
