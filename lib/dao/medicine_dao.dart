@@ -2,6 +2,7 @@ import 'package:floor/floor.dart';
 import 'package:medical_reminder/entity/medicine.dart';
 import 'package:medical_reminder/entity/patient.dart';
 
+// جدول خاص بمواعيد الادوية
 @dao
 abstract class MedicineDao {
 // سحب جميع البيانات من جدول الادوية
