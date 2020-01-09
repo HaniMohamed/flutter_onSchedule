@@ -1,6 +1,7 @@
 import 'package:floor/floor.dart';
 import 'package:medical_reminder/entity/notification.dart';
 
+// جدول خاص بالاشعارات
 @dao
 abstract class NotificationDao {
 // سحب جميع بيانات الاشعارات 
