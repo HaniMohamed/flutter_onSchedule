@@ -19,6 +19,8 @@ import 'package:medical_reminder/entity/missed.dart';
 
 part 'database.g.dart'; // the generated code will be there
 
+// ملف تعريف الداتابيز
+// اولا استدعاء العناصر الداخلة في الداتابيز مثل : عنصر المريض  وموعد الكشف والاشعار ...
 @Database(version: 1, entities: [
   Patient,
   Appointment,
@@ -27,6 +29,7 @@ part 'database.g.dart'; // the generated code will be there
   NotificationEntity,
   Missed
 ])
+// استدعاء جداول الداتابيز
 abstract class AppDatabase extends FloorDatabase {
   PatientDao get patientDao;
   AppointmentDao get appointmentDao;
