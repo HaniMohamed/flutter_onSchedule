@@ -16,13 +16,15 @@ String target;
 
 final GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
 
-
+// اول ملف يتم استدعائها عند بدء تشغيل التطبيق
 void main() async {
+// جزء خاص بسحب بيانات الاعطال
   Crashlytics.instance.enableInDevMode = true;
 
   // Pass all uncaught errors from the framework to Crashlytics.
   FlutterError.onError = Crashlytics.instance.recordFlutterError;
 
+// تعريف الداتابيز المستخدمة
   WidgetsFlutterBinding.ensureInitialized();
   final database =
       await $FloorAppDatabase.databaseBuilder('flutter_database.db').build();
@@ -39,6 +41,7 @@ class MyApp extends StatelessWidget {
 
   const MyApp(this.dao);
 
+// تعريف الاشعارات 
   initNotificationService(context) async {
     WidgetsFlutterBinding.ensureInitialized();
     // NOTE: if you want to find out if the app was launched via notification then you could use the following call and then do something like
@@ -69,7 +72,7 @@ class MyApp extends StatelessWidget {
       selectNotificationSubject.add(payload);
     });
   }
-
+// عند الضغط على الاشعارت يتم فتح صفحة تأكيد اخذ الدواء
   void navigationPage() {
     navigatorKey.currentState.push(
         MaterialPageRoute(builder: (context) => ConfirmationScreen(target)));
@@ -80,13 +83,13 @@ class MyApp extends StatelessWidget {
 
     initNotificationService(context);
     return MaterialApp(
-      title: 'On Schedule',
+      title: 'On Schedule', // اسم التطبيق
       navigatorKey: navigatorKey,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       routes: <String, WidgetBuilder>{
-        '/': (context) => new SplashScreen(),
+        '/': (context) => new SplashScreen(), // فتح الصفحة الابتدائية
         "NOTIFICATION_SCREEN": (BuildContext context) =>
             new ConfirmationScreen(target),
         "Main_SCREEN": (BuildContext context) => MyHomePage(
